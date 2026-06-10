@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+    <title>Test Area</title>
+
+    <style>
+        .button {
+            pointer-events: auto;
+            z-index: 10;
+        }
+    </style>
+
+</head>
+<a href="/Index.html">
+    <image src="BackText.png" style="position: absolute; z-index: 10; top: 20px; right: 20px;"></image>
+</a>
+<body>
+    <a-scene>
+        <a-assets>
+            <img id="place" src="">
+
+            <script>
+                const urlParams = new URLSearchParams(window.location.search);
+                let value = urlParams.get('place');
+                let imageString = `360_TEX_${value}.png`;
+                document.getElementById("place").src = imageString;
+            </script>
+
+        </a-assets>
+        <a-sky id="image-360" radius="10" src="#place"></a-sky>
+        <a-camera>
+    
+        </a-camera>
+    </a-scene>
+</body>
+</html>

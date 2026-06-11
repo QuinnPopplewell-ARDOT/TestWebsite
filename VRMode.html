@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>360° Image Browser</title>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-template-component@3.x.x/dist/aframe-template-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-layout-component@5.x.x/dist/aframe-layout-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5.x.x/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
+
+    <style>
+    .button {
+            pointer-events: auto;
+            z-index: 10;
+        }
+    </style>
+
+</head>
+<body>
+    <a href="https://quinnpopplewell-ardot.github.io/TestWebsite/">
+        <image src="locations/BackText.png" style="position: absolute; z-index: 10; top: 20px; right: 20px;"></image>
+    </a>
+    <a-scene>
+        <a-assets>
+            <img id="place1img" src="locations/360_TEX_1.png">
+            <img id="place2img" src="locations/360_TEX_2.png">
+            <img id="place3img" src="locations/360_TEX_3.png">
+            <img id="place4img" src="locations/360_TEX_4.png">
+            <img id="place5img" src="locations/360_TEX_5.png">
+
+            <a-asset-item id="Platform" src="Platform.gltf"></a-asset-item>
+        </a-assets>
+
+        
+
+        <a-entity gltf-model="#Platform" rotation="0 90 0" position="0 0 -0.25">
+            <a-entity rotation="0 -90 0" position="-0.2516 0 0">
+                <a-entity proxy-event="event: click; to: #image-360; as: place3img" data-src="#place3img" geometry="primitive: cylinder; height: 0.1; radius: 0.05; segmentsHeight: 1; segmentsRadial: 10" position="-1.12854 1.06683 -1.13595" material="color: #eeff00" rotation="69.63 0 0" id="place3"
+                    event-set__platformShow="_event: click; _target: [gltf-model]; visible: false";
+                    event-set__backPlaneHide="_event: click; _target: #BackPlane; visible: true";></a-entity>
+                <a-entity proxy-event="event: click; to: #image-360; as: place2img" data-src="#place2img" geometry="primitive: cylinder; height: 0.1; radius: 0.05; segmentsHeight: 1; segmentsRadial: 10" position="-0.97352 1.0296 -1.11373" material="color: #eeff00" rotation="69.63 0 0" id="place2"
+                    event-set__platformShow="_event: click; _target: [gltf-model]; visible: false";
+                    event-set__backPlaneHide="_event: click; _target: #BackPlane; visible: true";></a-entity>
+                <a-entity proxy-event="event: click; to: #image-360; as: place5img" data-src="#place5img" geometry="primitive: cylinder; height: 0.1; radius: 0.05; segmentsHeight: 1; segmentsRadial: 10" position="-0.67384 1.20661 -1.17481" material="color: #eeff00" rotation="69.63 0 0" id="place5"
+                    event-set__platformShow="_event: click; _target: [gltf-model]; visible: false";
+                    event-set__backPlaneHide="_event: click; _target: #BackPlane; visible: true";></a-entity>
+                <a-entity proxy-event="event: click; to: #image-360; as: place1img" data-src="#place1img" geometry="primitive: cylinder; height: 0.1; radius: 0.05; segmentsHeight: 1; segmentsRadial: 10" position="-0.45217 1.08486 -1.13106" material="color: #eeff00" rotation="69.63 0 0" id="place1"
+                    event-set__platformShow="_event: click; _target: [gltf-model]; visible: false";
+                    event-set__backPlaneHide="_event: click; _target: #BackPlane; visible: true";></a-entity>
+                <a-entity proxy-event="event: click; to: #image-360; as: place4img" data-src="#place4img" geometry="primitive: cylinder; height: 0.1; radius: 0.05; segmentsHeight: 1; segmentsRadial: 10" position="-0.399 0.93691 -1.08866" material="color: #eeff00" rotation="69.63 0 0" id="place4"
+                    event-set__platformShow="_event: click; _target: [gltf-model]; visible: false";
+                    event-set__backPlaneHide="_event: click; _target: #BackPlane; visible: true";></a-entity>
+            </a-entity>
+        </a-entity>
+        
+        <a-sky id="image-360" radius="20" src="#place3img"
+            event-set__button3="_event: place3img; src: #place3img;" 
+            event-set__button2="_event: place2img; src: #place2img;"
+            event-set__button5="_event: place5img; src: #place5img;"
+            event-set__button1="_event: place1img; src: #place1img;"
+            event-set__button4="_event: place4img; src: #place4img;"
+        ></a-sky>
+
+        <a-entity id="BackPlane" visible="false" geometry="primitive: plane; height: 0.5; width: 0.7" position="0 0.28381 -0.71361" rotation="-29.999999999999996 0 0" material=""
+            event-set__platformHide="_event: click; _target: [gltf-model]; visible: true"
+            event-set__hideBackPlane="_event: click; visible: false;">
+            <a-entity id="BackPlaneText" position="0 0 0" material="color: #000000" text__backplanetext="align: center; color: #000000; value: Back; width: 5.79"></a-entity>
+        </a-entity>
+
+        <a-camera>
+            <a-cursor
+                id="cursor"
+                animation__click="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; easing: easeInCubic; dur: 150; startEvents: click"
+                animation__clickreset="property: scale; to: 0.1 0.1 0.1; dur: 1; startEvents: animationcomplete__click"
+                animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing">
+            </a-cursor>
+        </a-camera>
+    </a-scene>
+</body>
+</html>

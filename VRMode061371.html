@@ -22,8 +22,9 @@
     </a>
     <a-scene>
         <a-assets>
-            <img id="place1img" src="locations/360_TEX_1.png">
-            <img id="place2img" src="locations/061371_shot1.png">
+            <img id="place1img" src="locations/061371_shot1.png">
+            <img id="place2img" src="locations/061371_shot2.png">
+            <img id="place3img" src="locations/061371_shot3.png">
 
             <a-asset-item id="Platform" src="061371plotpedestal.gltf"></a-asset-item>
         </a-assets>
@@ -42,7 +43,10 @@
         
         <a-entity gltf-model="#Platform" rotation="0 90 0" position="0 0 -0.25">
             <a-entity rotation="0 -90 0" position="-0.2516 0 0">
-                <a-entity template="src: #link" data-src="#place2img" position="-0.674 1.547 -1.601" material="color: #eeff00" rotation="69.63 0 0" id="place2"></a-entity>
+                <a-entity template="src: #link" data-src="#place1img" position="-0.674 1.547 -1.601" material="color: #eeff00" rotation="69.63 0 0" id="place1"></a-entity>
+                <a-entity template="src: #link" data-src="#place2img" position="0.039 1 -1.366" material="color: #eeff00" rotation="69.63 0 0" id="place2"></a-entity>
+                <a-entity template="src: #link" data-src="#place3img" position="-1.292 2.115 -1.82" material="color: #eeff00" rotation="69.63 0 0" id="place3"></a-entity>
+
             </a-entity>
         </a-entity>
         

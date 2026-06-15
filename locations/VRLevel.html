@@ -13,7 +13,7 @@
 
 </head>
 <body>
-    <a href="https://quinnpopplewell-ardot.github.io/TestWebsite/">
+    <a id="returnLink" href="https://quinnpopplewell-ardot.github.io/TestWebsite/">
         <image src="BackText.png" style="position: absolute; z-index: 10; top: 20px; right: 20px;"></image>
     </a>
     <a-scene>
@@ -23,6 +23,10 @@
             <script>
                 const urlParams = new URLSearchParams(window.location.search);
                 let value = urlParams.get('place');
+                let plot = urlParams.get('plot');
+
+                document.getElementById("returnLink").href= `../${plot}.html`;
+
                 let imageString = `${value}.png`;
                 document.getElementById("place").src = imageString;
             </script>

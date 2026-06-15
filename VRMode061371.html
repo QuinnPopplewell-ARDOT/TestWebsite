@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>360° Image Browser</title>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-template-component@3.x.x/dist/aframe-template-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-layout-component@5.x.x/dist/aframe-layout-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5.x.x/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
+
+    <style>
+    .button {
+            pointer-events: auto;
+            z-index: 10;
+        }
+    </style>
+
+</head>
+<body>
+    <a href="https://quinnpopplewell-ardot.github.io/TestWebsite/">
+        <image src="locations/BackText.png" style="position: absolute; z-index: 10; top: 20px; right: 20px;"></image>
+    </a>
+    <a-scene>
+        <a-assets>
+            <img id="place1img" src="locations/360_TEX_1.png">
+            <img id="place2img" src="locations/061371_shot1.png">
+
+            <a-asset-item id="Platform" src="061371plotpedestal.gltf"></a-asset-item>
+        </a-assets>
+        <script id="link" type="text/html">
+            <a-entity >
+                <a-entity class="link" 
+                        event-set__change-sky="_event: click; _target: #image-360; material.src: ${src}; delay: 300"
+                        geometry="primitive: cylinder; height: 0.1; radius: 0.05; segmentsHeight: 1; segmentsRadial: 10" material="color: #ff0000"
+                        event-set__platformShow="_event: click; _target: [gltf-model]; visible: false; _delay: 300;"
+                        event-set__backPlaneHide="_event: click; _target: #BackPlane; visible: true; _delay: 300;"
+                        event-set__mouseenter="scale: 1.2 1.2 1.2"
+                        event-set__mouseleave="scale: 1 1 1">
+                        </a-entity>
+            </a-entity>
+        </script>
+        
+        <a-entity gltf-model="#Platform" rotation="0 90 0" position="0 0 -0.25">
+            <a-entity rotation="0 -90 0" position="-0.2516 0 0">
+                <a-entity template="src: #link" data-src="#place2img" position="-0.674 1.547 -1.601" material="color: #eeff00" rotation="69.63 0 0" id="place2"></a-entity>
+            </a-entity>
+        </a-entity>
+        
+        
+        <a-sky id="image-360" radius="20" src="#place1img"
+        ></a-sky>
+        
+        <a-entity id="BackPlane" visible="false" geometry="primitive: plane; height: 0.2; width: 0.4" position="0 0.8 -.9" rotation="-30 0 0" material=""
+            event-set__platformHide="_event: click; _target: [gltf-model]; visible: true; _delay: 300"
+            event-set__hideBackPlane="_event: click; visible: false; _delay: 300">
+            <a-entity id="BackPlaneText" position="0 0 0" material="color: #000000" text__backplanetext="align: center; color: #000000; value: Back; width: 3"></a-entity>
+        </a-entity>
+
+        <a-camera>
+            <a-cursor
+                id="cursor"
+                raycaster="objects: .link, #BackPlane"
+                event-set__hoveron="_event: mouseenter; material.color: #58eb34"
+                event-set__hoveroff="_event: mouseleave; material.color: #000000"
+                animation__default="property: scale; to: 1 1 1; dur 1; startEvents: loaded"
+                animation__click="property: scale; from: .1 .1 .1; to: 1 1 1; easing: easeInCubic; dur: 150; startEvents: click"
+                animation__clickreset="property: scale; to: .1 .1 .1; dur: 1;"
+                animation__fusing="property: scale; from: 1 1 1; to:.1 .1 .1; easing: easeInCubic; dur: 150; startEvents: fusing">
+            </a-cursor>
+        </a-camera>
+    </a-scene>
+</body>
+</html>

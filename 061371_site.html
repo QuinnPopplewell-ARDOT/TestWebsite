@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent {
+            position: relative;
+            width: 100%;
+        }
+
+        #map{       
+            width:100%
+        }
+
+        .button {
+            position: absolute;
+            z-index: 10;
+            height: 2vw;
+        }
+
+        #buttonA{
+            left: 29%; 
+            top: 45%;
+        }
+
+
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+        <div id="parent">
+
+            <a href=locations/VRLevel.html?place=061371_shot1>
+                <img id="buttonA" class="button" src="Button.png"></img>
+            </a>
+
+
+            <img id="map" src="061371imageplot.png"></img>
+        </div>
+        <a href="VRMode061371.html">
+        <image src="EnterVRButton.png" style="position: fixed; z-index: 10; bottom: 50px; right: 20px;"></image>
+    </a>
+</body>
+</html>

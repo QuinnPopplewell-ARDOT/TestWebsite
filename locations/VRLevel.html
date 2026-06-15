@@ -23,7 +23,7 @@
             <script>
                 const urlParams = new URLSearchParams(window.location.search);
                 let value = urlParams.get('place');
-                let imageString = `360_TEX_${value}.png`;
+                let imageString = `${value}.png`;
                 document.getElementById("place").src = imageString;
             </script>
 

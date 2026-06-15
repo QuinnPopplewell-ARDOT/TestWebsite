@@ -30,49 +30,49 @@
 
             <a-asset-item id="Platform" src="Platform.gltf"></a-asset-item>
         </a-assets>
-
+        <script id="link" type="text/html">
+            <a-entity >
+                <a-entity class="link" 
+                        event-set__change-sky="_event: click; _target: #image-360; material.src: ${src}; delay: 300"
+                        geometry="primitive: cylinder; height: 0.1; radius: 0.05; segmentsHeight: 1; segmentsRadial: 10" material="color: #ff0000"
+                        event-set__platformShow="_event: click; _target: [gltf-model]; visible: false; _delay: 300;"
+                        event-set__backPlaneHide="_event: click; _target: #BackPlane; visible: true; _delay: 300;"
+                        event-set__mouseenter="scale: 1.2 1.2 1.2"
+                        event-set__mouseleave="scale: 1 1 1">
+                        </a-entity>
+            </a-entity>
+        </script>
         
-
         <a-entity gltf-model="#Platform" rotation="0 90 0" position="0 0 -0.25">
             <a-entity rotation="0 -90 0" position="-0.2516 0 0">
-                <a-entity proxy-event="event: click; to: #image-360; as: place3img" data-src="#place3img" geometry="primitive: cylinder; height: 0.1; radius: 0.05; segmentsHeight: 1; segmentsRadial: 10" position="-1.12854 1.06683 -1.13595" material="color: #eeff00" rotation="69.63 0 0" id="place3"
-                    event-set__platformShow="_event: click; _target: [gltf-model]; visible: false";
-                    event-set__backPlaneHide="_event: click; _target: #BackPlane; visible: true";></a-entity>
-                <a-entity proxy-event="event: click; to: #image-360; as: place2img" data-src="#place2img" geometry="primitive: cylinder; height: 0.1; radius: 0.05; segmentsHeight: 1; segmentsRadial: 10" position="-0.97352 1.0296 -1.11373" material="color: #eeff00" rotation="69.63 0 0" id="place2"
-                    event-set__platformShow="_event: click; _target: [gltf-model]; visible: false";
-                    event-set__backPlaneHide="_event: click; _target: #BackPlane; visible: true";></a-entity>
-                <a-entity proxy-event="event: click; to: #image-360; as: place5img" data-src="#place5img" geometry="primitive: cylinder; height: 0.1; radius: 0.05; segmentsHeight: 1; segmentsRadial: 10" position="-0.67384 1.20661 -1.17481" material="color: #eeff00" rotation="69.63 0 0" id="place5"
-                    event-set__platformShow="_event: click; _target: [gltf-model]; visible: false";
-                    event-set__backPlaneHide="_event: click; _target: #BackPlane; visible: true";></a-entity>
-                <a-entity proxy-event="event: click; to: #image-360; as: place1img" data-src="#place1img" geometry="primitive: cylinder; height: 0.1; radius: 0.05; segmentsHeight: 1; segmentsRadial: 10" position="-0.45217 1.08486 -1.13106" material="color: #eeff00" rotation="69.63 0 0" id="place1"
-                    event-set__platformShow="_event: click; _target: [gltf-model]; visible: false";
-                    event-set__backPlaneHide="_event: click; _target: #BackPlane; visible: true";></a-entity>
-                <a-entity proxy-event="event: click; to: #image-360; as: place4img" data-src="#place4img" geometry="primitive: cylinder; height: 0.1; radius: 0.05; segmentsHeight: 1; segmentsRadial: 10" position="-0.399 0.93691 -1.08866" material="color: #eeff00" rotation="69.63 0 0" id="place4"
-                    event-set__platformShow="_event: click; _target: [gltf-model]; visible: false";
-                    event-set__backPlaneHide="_event: click; _target: #BackPlane; visible: true";></a-entity>
+                <a-entity template="src: #link" data-src="#place3img" position="-1.12854 1.06683 -1.13595" material="color: #eeff00" rotation="69.63 0 0" id="place3"></a-entity>
+                <a-entity template="src: #link" data-src="#place2img" position="-0.97352 1.0296 -1.11373" material="color: #eeff00" rotation="69.63 0 0" id="place2"></a-entity>
+                <a-entity template="src: #link" data-src="#place5img" position="-0.67384 1.20661 -1.17481" material="color: #eeff00" rotation="69.63 0 0" id="place5"></a-entity>
+                <a-entity template="src: #link" data-src="#place1img" position="-0.45217 1.08486 -1.13106" material="color: #eeff00" rotation="69.63 0 0" id="place1"></a-entity>
+                <a-entity template="src: #link" data-src="#place4img" position="-0.399 0.93691 -1.08866" material="color: #eeff00" rotation="69.63 0 0" id="place4"></a-entity>
             </a-entity>
         </a-entity>
         
+        
         <a-sky id="image-360" radius="20" src="#place3img"
-            event-set__button3="_event: place3img; src: #place3img;" 
-            event-set__button2="_event: place2img; src: #place2img;"
-            event-set__button5="_event: place5img; src: #place5img;"
-            event-set__button1="_event: place1img; src: #place1img;"
-            event-set__button4="_event: place4img; src: #place4img;"
         ></a-sky>
-
-        <a-entity id="BackPlane" visible="false" geometry="primitive: plane; height: 0.5; width: 0.7" position="0 0.28381 -0.71361" rotation="-29.999999999999996 0 0" material=""
-            event-set__platformHide="_event: click; _target: [gltf-model]; visible: true"
-            event-set__hideBackPlane="_event: click; visible: false;">
-            <a-entity id="BackPlaneText" position="0 0 0" material="color: #000000" text__backplanetext="align: center; color: #000000; value: Back; width: 5.79"></a-entity>
+        
+        <a-entity id="BackPlane" visible="false" geometry="primitive: plane; height: 0.2; width: 0.4" position="0 0.8 -.9" rotation="-30 0 0" material=""
+            event-set__platformHide="_event: click; _target: [gltf-model]; visible: true; _delay: 300"
+            event-set__hideBackPlane="_event: click; visible: false; _delay: 300">
+            <a-entity id="BackPlaneText" position="0 0 0" material="color: #000000" text__backplanetext="align: center; color: #000000; value: Back; width: 3"></a-entity>
         </a-entity>
 
         <a-camera>
             <a-cursor
                 id="cursor"
-                animation__click="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; easing: easeInCubic; dur: 150; startEvents: click"
-                animation__clickreset="property: scale; to: 0.1 0.1 0.1; dur: 1; startEvents: animationcomplete__click"
-                animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing">
+                raycaster="objects: .link, #BackPlane"
+                event-set__hoveron="_event: mouseenter; material.color: #58eb34"
+                event-set__hoveroff="_event: mouseleave; material.color: #000000"
+                animation__default="property: scale; to: 1 1 1; dur 1; startEvents: loaded"
+                animation__click="property: scale; from: .1 .1 .1; to: 1 1 1; easing: easeInCubic; dur: 150; startEvents: click"
+                animation__clickreset="property: scale; to: .1 .1 .1; dur: 1;"
+                animation__fusing="property: scale; from: 1 1 1; to:.1 .1 .1; easing: easeInCubic; dur: 150; startEvents: fusing">
             </a-cursor>
         </a-camera>
     </a-scene>

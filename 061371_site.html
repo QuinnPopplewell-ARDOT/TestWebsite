@@ -6,9 +6,15 @@
     <title>061371 Map</title>
     <style>
         #parent {
-            position: relative;
             height: 100%;
-            display: inline-block
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #subParent{
+            position: relative;
+            display: inline-block;
         }
 
         #map{       
@@ -16,8 +22,6 @@
             max-width:95vw;
             width: auto;
             display: block;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .button {
@@ -25,8 +29,6 @@
             z-index: 10;
             height: 2vw;
             max-height: 4vw;
-            justify-content: center;
-            align-items: center;
         }
 
         #buttonA{
@@ -71,19 +73,20 @@
 </head>
 <body>
         <div id="parent">
+            <div id="subParent">
+                <a href=locations/VRLevel.html?plot=061371_site&place=061371_shot1>
+                    <img id="buttonA" class="button" src="Button.png"></img>
+                </a>
+                <a href=locations/VRLevel.html?plot=061371_site&place=061371_shot2>
+                    <img id="buttonB" class="button" src="Button.png"></img>
+                </a>
+                <a href=locations/VRLevel.html?plot=061371_site&place=061371_shot3>
+                    <img id="buttonC" class="button" src="Button.png"></img>
+                </a>
+                <img id="map" src="061371imageplot_cropped.png"></img>
+            </div>
 
-            <a href=locations/VRLevel.html?plot=061371_site&place=061371_shot1>
-                <img id="buttonA" class="button" src="Button.png"></img>
-            </a>
-            <a href=locations/VRLevel.html?plot=061371_site&place=061371_shot2>
-                <img id="buttonB" class="button" src="Button.png"></img>
-            </a>
-            <a href=locations/VRLevel.html?plot=061371_site&place=061371_shot3>
-                <img id="buttonC" class="button" src="Button.png"></img>
-            </a>
 
-
-            <img id="map" src="061371imageplot_cropped.png"></img>
         </div>
         <a href="index.html">
         <image id="backButton" src="BackText.png"></image>

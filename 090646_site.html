@@ -6,25 +6,29 @@
     <title>090646 Map</title>
     <style>
         #parent {
-            position: relative;
             height: 100%;
-            display: inline-block
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #subParent{
+            position: relative;
+            display: inline-block;
         }
 
         #map{       
-            max-width:95vw;
             max-height:95vh;
+            max-width:95vw;
             width: auto;
             display: block;
-            margin-left: auto;
-            margin-right: auto;
-            align-items: right;
         }
 
         .button {
             position: absolute;
             z-index: 10;
             height: 2vw;
+            max-height: 4vw;
         }
 
         #buttonA{
@@ -79,29 +83,29 @@
 </head>
 <body>
         <div id="parent">
+            <div id="subParent">
+                <a href=locations/VRLevel.html?plot=090646_site&place=360_TEX_1>
+                    <img id="buttonA" class="button" src="Button.png"></img>
+                </a>
 
-            <a href=locations/VRLevel.html?plot=090646_site&place=360_TEX_1>
-                <img id="buttonA" class="button" src="Button.png"></img>
-            </a>
+                <a href=locations/VRLevel.html?plot=090646_site&place=360_TEX_2>
+                    <img id="buttonB" class="button" src="Button.png"></img>
+                </a>
 
-            <a href=locations/VRLevel.html?plot=090646_site&place=360_TEX_2>
-                <img id="buttonB" class="button" src="Button.png"></img>
-            </a>
+                <a href=locations/VRLevel.html?plot=090646_site&place=360_TEX_3>
+                    <img id="buttonC" class="button" src="Button.png"></img>
+                </a>
 
-            <a href=locations/VRLevel.html?plot=090646_site&place=360_TEX_3>
-                <img id="buttonC" class="button" src="Button.png"></img>
-            </a>
+                <a href=locations/VRLevel.html?plot=090646_site&place=360_TEX_4>
+                    <img id="buttonD" class="button" src="Button.png"></img>
+                </a>
+                
+                <a href=locations/VRLevel.html?plot=090646_site&place=360_TEX_5>
+                    <img id="buttonE" class="button" src="Button.png"></img>
+                </a>
+                <img id="map" src="090646imageplot.png"></img>
+            </div>
 
-            <a href=locations/VRLevel.html?plot=090646_site&place=360_TEX_4>
-                <img id="buttonD" class="button" src="Button.png"></img>
-            </a>
-            
-            <a href=locations/VRLevel.html?plot=090646_site&place=360_TEX_5>
-                <img id="buttonE" class="button" src="Button.png"></img>
-            </a>
-
-
-            <img id="map" src="090646imageplot.png"></img>
         </div>
         <a href="index.html">
         <image id="backButton" src="BackText.png"></image>

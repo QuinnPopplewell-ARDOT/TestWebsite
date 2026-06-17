@@ -7,11 +7,11 @@
     <style>
         #parent {
             position: relative;
-            width: 100%;
+            height: 100%;
         }
 
         #map{       
-            width:95%;
+            max-width:95%;
             display: block;
             margin-left: auto;
             margin-right: auto;
@@ -39,6 +39,25 @@
             top: 15%;
         }
 
+        #backButton{
+            position: fixed; 
+            z-index: 10;
+            height: 20%;
+            max-width: 20%;
+            max-height: 15%;
+            bottom: 20px; 
+            left: 20px;
+        }
+
+        #vrButton{
+            position: fixed; 
+            z-index: 10;
+            height: 20%;
+            max-width: 20%;
+            max-height: 15%;
+            bottom: 20px; 
+            right: 20px;
+        }
 
     </style>
     <script>
@@ -62,10 +81,10 @@
             <img id="map" src="061371imageplot_cropped.png"></img>
         </div>
         <a href="index.html">
-        <image src="BackText.png" style="position: fixed; z-index: 10; bottom: 50px; left: 20px;"></image>
+        <image id="backButton" src="BackText.png"></image>
     </a>
-        <a href="VRMode061371.html">
-        <image src="EnterVRButton.png" style="position: fixed; z-index: 10; bottom: 50px; right: 20px;"></image>
+        <a  href="VRMode061371.html">
+        <image id="vrButton" src="EnterVRButton.png"></image>
     </a>
 </body>
 </html>

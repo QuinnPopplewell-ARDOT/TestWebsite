@@ -45,6 +45,26 @@
             top: 40%;
         }
 
+        #backButton{
+            position: fixed; 
+            z-index: 10;
+            height: 20%;
+            max-width: 20%;
+            max-height: 15%;
+            bottom: 20px; 
+            left: 20px;
+        }
+
+        #vrButton{
+            position: fixed; 
+            z-index: 10;
+            height: 20%;
+            max-width: 20%;
+            max-height: 15%;
+            bottom: 20px; 
+            right: 20px;
+        }
+
     </style>
     <script>
 
@@ -77,10 +97,10 @@
             <img id="map" src="090646imageplot.png"></img>
         </div>
         <a href="index.html">
-        <image src="BackText.png" style="position: absolute; z-index: 10; bottom: 50px; left: 20px;"></image>
+        <image id="backButton" src="BackText.png"></image>
     </a>
         <a href="VRMode.html">
-        <image src="EnterVRButton.png" style="position: absolute; z-index: 10; bottom: 50px; right: 20px;"></image>
+        <image id="vrButton" src="EnterVRButton.png"></image>
     </a>
 </body>
 </html>

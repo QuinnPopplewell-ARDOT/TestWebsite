@@ -67,7 +67,7 @@
 	"materials":[
 		{
 			"doubleSided":true,
-			"name":"Material",
+			"name":"Material.001",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
 					0.800000011920929,
@@ -94,7 +94,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Cube",
+			"name":"Cube.001",
 			"primitives":[
 				{
 					"attributes":{
@@ -108,7 +108,7 @@
 			]
 		},
 		{
-			"name":"Cube.001",
+			"name":"Cube.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -144,8 +144,8 @@
 	"images":[
 		{
 			"mimeType":"image/png",
-			"name":"061371imageplot",
-			"uri":"061371imageplot.png"
+			"name":"061371imageplot_small",
+			"uri":"061371imageplot_small.png"
 		}
 	],
 	"accessors":[
